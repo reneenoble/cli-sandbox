@@ -1,0 +1,15 @@
+2024-01-15 08:23:11 INFO  Server starting on port 8080
+2024-01-15 08:23:12 INFO  Database connection established
+2024-01-15 08:24:01 WARN  High memory usage detected: 87%
+2024-01-15 08:24:45 ERROR Failed to process request /api/users: timeout
+2024-01-15 08:25:01 INFO  Retry attempt 1 for /api/users
+2024-01-15 08:25:05 ERROR Retry failed for /api/users
+2024-01-15 08:26:00 INFO  Health check passed
+2024-01-15 08:30:00 ERROR Database query error: connection refused
+2024-01-15 08:30:01 ERROR Falling back to cache
+2024-01-15 08:35:22 WARN  Rate limit approaching for user 42
+2024-01-15 08:40:00 INFO  Scheduled backup started
+2024-01-15 08:40:45 ERROR Backup failed: disk full
+2024-01-15 08:41:00 INFO  Alerting on-call team
+2024-01-15 08:45:00 INFO  Disk space freed: deleted old logs
+2024-01-15 08:50:00 ERROR Authentication service unreachable

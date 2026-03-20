@@ -1,0 +1,12 @@
+{
+  "title": "Automate a Task with Copilot",
+  "description": "Use gh copilot suggest to write a shell script that automates processing a set of data files.",
+  "difficulty": "beginner",
+  "order": 5,
+  "instructions": "## ⚡ Automate a Task with Copilot\n\nIn this final challenge, you'll use GitHub Copilot CLI to help you write a complete automation script from scratch!\n\n---\n\n### Your Mission\n\nYou have a folder of CSV sales reports (`reports/`). Your job is to:\n\n1. Combine all CSV files into one master file\n2. Find the highest-selling product\n3. Calculate total revenue\n4. Save a summary to `summary.txt`\n\nUse `gh copilot suggest` to get commands for each step!\n\n---\n\n### Step by Step\n\n**Step 1 — Explore the data:**\n\n```bash\nls reports/\ncat reports/january.csv\n```\n\n**Step 2 — Ask Copilot to help:**\n\n```bash\ngh copilot suggest \"combine all CSV files in reports/ folder into one file called master.csv\"\n```\n\n**Step 3 — Use the suggested commands** and verify:\n\n```bash\nwc -l master.csv\n```\n\n**Step 4 — Find the top product:**\n\n```bash\ngh copilot suggest \"in a CSV file with columns product,quantity,price find the product with highest total revenue\"\n```\n\n**Step 5 — Build your automation script:**\n\n```bash\ngh copilot suggest \"write a bash script that reads CSV files, calculates totals, and saves a summary\"\n```\n\nSave the script as `automate.sh` and run it:\n\n```bash\nbash automate.sh\ncat summary.txt\n```\n\n---\n\n### 🎯 Goal\n\nCreate a working `automate.sh` script that generates a `summary.txt` with:\n- Total number of sales records\n- Total revenue\n- Top product by revenue",
+  "hints": [
+    "gh copilot suggest \"merge multiple CSV files keeping header only once\"",
+    "gh copilot suggest \"calculate sum of a column in a CSV file using awk\"",
+    "gh copilot suggest \"find the line with maximum value in column 3 of a CSV file\""
+  ]
+}

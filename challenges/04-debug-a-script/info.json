@@ -1,0 +1,12 @@
+{
+  "title": "Debug a Broken Script",
+  "description": "Use gh copilot explain to understand Python errors, then gh copilot suggest to fix them.",
+  "difficulty": "beginner",
+  "order": 4,
+  "instructions": "## 🐛 Debug a Broken Script\n\nIn this challenge, you'll use GitHub Copilot CLI to help you debug a Python script.\n\n---\n\n### Your Mission\n\nYou have a Python script `buggy.py` that's supposed to process a list of student grades. It has several bugs. Use Copilot to help fix them!\n\n**Step 1 — Try running the script:**\n\n```bash\npython3 buggy.py\n```\n\nYou'll see an error. Copy the error message.\n\n**Step 2 — Ask Copilot to explain the error:**\n\n```bash\ngh copilot explain \"NameError: name 'students' is not defined\"\n```\n\n**Step 3 — Ask for a fix:**\n\n```bash\ngh copilot suggest \"fix NameError in Python where variable is used before assignment\"\n```\n\n**Step 4 — Open the file and fix the bug:**\n\n```bash\nnano buggy.py\n# or\nvi buggy.py\n```\n\n**Step 5 — Run again and fix the next bug!**\n\nRepeat until the script runs successfully and prints the grade report.\n\n---\n\n### Expected Output\n\nWhen all bugs are fixed, running `python3 buggy.py` should print:\n\n```\nGrade Report\n============\nAlice: 92/100 (A)\nBob: 78/100 (C+)\nCarol: 85/100 (B)\nDave: 61/100 (D)\nEve: 95/100 (A+)\n\nClass average: 82.2\nHighest score: Eve (95)\nLowest score: Dave (61)\n```\n\n---\n\n### 🎯 Goal\n\nFix all the bugs in `buggy.py` and get it to print the grade report.",
+  "hints": [
+    "gh copilot explain \"TypeError: unsupported operand type(s) for +: 'int' and 'str'\"",
+    "gh copilot suggest \"how to calculate average of a list in Python\"",
+    "gh copilot explain \"IndexError: list index out of range in Python\""
+  ]
+}

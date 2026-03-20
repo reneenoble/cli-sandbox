@@ -1,0 +1,17 @@
+Product: Widget A
+Description: A high-quality widget for all your needs
+Price: $29.99
+Stock: 150 units
+Category: Hardware
+
+Product: Gadget B
+Description: The latest gadget with advanced features
+Price: $149.99
+Stock: 45 units
+Category: Electronics
+
+Product: Tool C
+Description: Professional-grade tool for experts
+Price: $89.50
+Stock: 200 units
+Category: Tools

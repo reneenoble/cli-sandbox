@@ -1,0 +1,3 @@
+# Sandbox session directories are created here at runtime.
+# This file ensures the directory is tracked by git.
+# Individual session directories are excluded via .gitignore.

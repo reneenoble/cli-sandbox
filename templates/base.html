@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}GitHub Copilot CLI Tutorials{% endblock %}</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+
+  {% block head %}{% endblock %}
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <svg class="brand-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 3L5 7L9 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M5 7H15C17.2091 7 19 8.79086 19 11V21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="19" cy="18" r="3" fill="currentColor" opacity="0.3" stroke="currentColor" stroke-width="1.5"/>
+      </svg>
+      <a href="/" class="brand-name">Copilot CLI Tutorials</a>
+    </div>
+    {% if user is defined and user %}
+    <div class="navbar-user">
+      <img src="{{ user.avatar_url }}" alt="{{ user.login }}" class="avatar" />
+      <span class="username">{{ user.name or user.login }}</span>
+      <a href="/logout" class="btn btn-ghost btn-sm">Logout</a>
+    </div>
+    {% endif %}
+  </nav>
+
+  <main class="main-content">
+    {% block content %}{% endblock %}
+  </main>
+
+  {% block scripts %}{% endblock %}
+</body>
+</html>

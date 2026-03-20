@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+.eggs/
+*.egg-info/
+dist/
+build/
+
+# Environment
+.env
+*.env.local
+
+# Sandbox sessions (user data, not committed)
+sandboxes/*/
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

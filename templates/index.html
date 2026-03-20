@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Challenges — GitHub Copilot CLI Tutorials{% endblock %}
+
+{% block content %}
+<div class="home-page">
+  <div class="hero">
+    <h1 class="hero-title">GitHub Copilot CLI Tutorials</h1>
+    <p class="hero-subtitle">
+      Master the GitHub Copilot CLI with hands-on sandbox exercises.
+      Each challenge gives you a live terminal to practise in.
+    </p>
+  </div>
+
+  <div class="challenges-grid">
+    {% for c in challenges %}
+    <a href="/challenge/{{ c.id }}" class="challenge-card">
+      <div class="challenge-number">{{ loop.index }}</div>
+      <div class="challenge-content">
+        <h2 class="challenge-title">{{ c.title }}</h2>
+        <p class="challenge-desc">{{ c.description }}</p>
+        <div class="challenge-meta">
+          <span class="badge badge-{{ c.difficulty }}">{{ c.difficulty }}</span>
+          <span class="file-count">{{ c.files | length }} file{% if c.files | length != 1 %}s{% endif %}</span>
+        </div>
+      </div>
+      <div class="challenge-arrow">→</div>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

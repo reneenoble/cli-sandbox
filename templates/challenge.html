@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% block title %}{{ challenge.title }} — Copilot CLI Tutorials{% endblock %}
+
+{% block head %}
+  <!-- xterm.js (vendored) -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='vendor/xterm.css') }}" />
+  <script src="{{ url_for('static', filename='vendor/xterm.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/xterm-addon-fit.js') }}"></script>
+
+  <!-- Socket.IO (vendored) -->
+  <script src="{{ url_for('static', filename='vendor/socket.io.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="challenge-page">
+
+  <!-- Sidebar: challenge list -->
+  <aside class="sidebar">
+    <div class="sidebar-header">Challenges</div>
+    <nav class="sidebar-nav">
+      {% for c in challenges %}
+      <a href="/challenge/{{ c.id }}"
+         class="sidebar-item {% if c.id == challenge.id %}active{% endif %}">
+        <span class="sidebar-num">{{ loop.index }}</span>
+        <span class="sidebar-title">{{ c.title }}</span>
+      </a>
+      {% endfor %}
+    </nav>
+    <a href="/" class="sidebar-home">← All Challenges</a>
+  </aside>
+
+  <!-- Main content: instructions + workspace -->
+  <div class="challenge-main">
+
+    <!-- Instructions panel -->
+    <div class="instructions-panel">
+      <div class="instructions-header">
+        <div>
+          <span class="badge badge-{{ challenge.difficulty }}">{{ challenge.difficulty }}</span>
+          <h1 class="instructions-title">{{ challenge.title }}</h1>
+        </div>
+      </div>
+      <div class="instructions-body">
+        {{ challenge.instructions_html | safe }}
+      </div>
+      {% if challenge.hints %}
+      <details class="hints-section">
+        <summary>💡 Hints</summary>
+        <ul class="hints-list">
+          {% for hint in challenge.hints %}
+          <li><code>{{ hint }}</code></li>
+          {% endfor %}
+        </ul>
+      </details>
+      {% endif %}
+    </div>
+
+    <!-- Workspace: terminal + files -->
+    <div class="workspace-panel">
+      <div class="workspace-toolbar">
+        <div class="toolbar-tabs">
+          <button class="tab-btn active" id="tab-terminal" onclick="showTab('terminal')">
+            <span class="tab-icon">⚡</span> Terminal
+          </button>
+          <button class="tab-btn" id="tab-files" onclick="showTab('files')">
+            <span class="tab-icon">📁</span> Files
+          </button>
+        </div>
+        <button class="btn btn-restore" id="restore-btn" title="Restore all files to original state">
+          🔄 Restore Files
+        </button>
+      </div>
+
+      <!-- Terminal tab -->
+      <div id="workspace-terminal" class="workspace-tab active">
+        <div id="terminal-container"></div>
+      </div>
+
+      <!-- Files tab -->
+      <div id="workspace-files" class="workspace-tab">
+        <div class="file-explorer">
+          <div class="file-list" id="file-list">
+            {% for f in files %}
+            <button class="file-item" onclick="loadFile('{{ f }}')">
+              <span class="file-icon">{{ '📁' if '/' in f else '📄' }}</span>
+              <span class="file-name">{{ f }}</span>
+            </button>
+            {% endfor %}
+          </div>
+          <div class="file-viewer">
+            <div class="file-viewer-header" id="file-viewer-name">Select a file to view</div>
+            <pre class="file-viewer-content" id="file-viewer-content"><span class="placeholder">← Select a file from the list</span></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  const CHALLENGE_ID = "{{ challenge.id }}";
+  const SESSION_ID = "{{ session_id }}";
+</script>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+{% endblock %}
