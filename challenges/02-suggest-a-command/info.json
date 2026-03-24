@@ -1,0 +1,12 @@
+{
+  "title": "Suggest the Right Command",
+  "description": "Describe what you want to do in plain English and let gh copilot suggest the command.",
+  "difficulty": "beginner",
+  "order": 2,
+  "instructions": "## 💡 Suggest the Right Command\n\nCan't remember the exact syntax? No problem! `gh copilot suggest` lets you describe what you want to do in plain English and it suggests the right command.\n\n---\n\n### Your Mission\n\nYou have a list of tasks in `tasks.md` that you need to accomplish using the command line. Use `gh copilot suggest` to find the commands.\n\n**Step 1 — Read your task list:**\n\n```bash\ncat tasks.md\n```\n\n**Step 2 — Ask Copilot to suggest a command:**\n\n```bash\ngh copilot suggest \"list all files larger than 1MB in the current directory\"\n```\n\n**Step 3 — Try more tasks:**\n\n```bash\ngh copilot suggest \"count the number of lines in all .txt files\"\ngh copilot suggest \"rename all .txt files to add today's date as prefix\"\n```\n\n---\n\n### 🎯 Goal\n\nComplete at least **4 tasks** from `tasks.md` using commands suggested by Copilot CLI.\n\n> **Tip:** Be specific in your descriptions! Instead of \"delete files\", say \"delete all .log files older than 30 days in the /tmp directory\".",
+  "hints": [
+    "gh copilot suggest \"show disk usage sorted by size\"",
+    "gh copilot suggest \"find all Python files in the current directory recursively\"",
+    "gh copilot suggest \"show the 10 most recently modified files\""
+  ]
+}

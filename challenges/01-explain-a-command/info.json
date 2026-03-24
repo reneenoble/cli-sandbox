@@ -1,0 +1,12 @@
+{
+  "title": "Explain a Mystery Command",
+  "description": "Use gh copilot explain to decode complex shell commands you've never seen before.",
+  "difficulty": "beginner",
+  "order": 1,
+  "instructions": "## 🔍 Explain a Mystery Command\n\nWelcome to your first GitHub Copilot CLI challenge!\n\n**GitHub Copilot CLI** helps you understand and write shell commands using natural language. One of its most powerful features is `gh copilot explain`, which breaks down any command into plain English.\n\n---\n\n### Your Mission\n\nYou've inherited a server and found a `mystery.sh` script. Before running it, you want to understand what each command does.\n\n**Step 1 — Read the mystery script:**\n\n```bash\ncat mystery.sh\n```\n\n**Step 2 — Use Copilot to explain a command:**\n\nPick any command from the script and ask Copilot to explain it:\n\n```bash\ngh copilot explain \"find . -name '*.log' -mtime +7 -delete\"\n```\n\n**Step 3 — Try explaining the whole pipeline:**\n\n```bash\ngh copilot explain \"ps aux | grep python | awk '{print $2}' | xargs kill\"\n```\n\n---\n\n### 🎯 Goal\n\nExplain at least **3 different commands** from the script using `gh copilot explain`.\n\n> **Tip:** You can explain any command — not just ones in the file. Try ones you see in your day-to-day work!",
+  "hints": [
+    "gh copilot explain \"<paste your command here>\"",
+    "gh copilot explain \"tar -czf archive.tar.gz ./logs\"",
+    "gh copilot explain \"awk -F: '{print $1}' /etc/passwd\""
+  ]
+}

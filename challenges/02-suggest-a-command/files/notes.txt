@@ -1,0 +1,10 @@
+Meeting notes - Project Kickoff
+================================
+Date: 2024-01-15
+Attendees: Alice, Bob, Carol
+
+TODO: Set up CI/CD pipeline by end of week
+TODO: Write unit tests for authentication module
+TODO: Review pull request #42
+TODO: Update documentation for new API endpoints
+TODO: Schedule code review session with team

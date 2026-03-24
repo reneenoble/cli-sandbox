@@ -1,0 +1,12 @@
+{
+  "title": "Understand Git Errors",
+  "description": "Use gh copilot explain to decode common git error messages and understand what went wrong.",
+  "difficulty": "beginner",
+  "order": 3,
+  "instructions": "## 🔧 Understand Git Errors with Copilot\n\nGit errors can be cryptic! `gh copilot explain` can help you understand what went wrong and how to fix it.\n\n---\n\n### Your Mission\n\nYou'll find a file `git-errors.md` containing common Git error messages. Use Copilot to understand each one.\n\n**Step 1 — Read the error messages:**\n\n```bash\ncat git-errors.md\n```\n\n**Step 2 — Ask Copilot to explain a Git error:**\n\n```bash\ngh copilot explain \"error: failed to push some refs to 'origin'\"\n```\n\n**Step 3 — Ask for a fix:**\n\nYou can also ask Copilot what commands to run to fix an issue:\n\n```bash\ngh copilot suggest \"fix git merge conflict in working directory\"\ngh copilot suggest \"undo the last git commit without losing changes\"\n```\n\n---\n\n### Explore the git repo\n\nThis sandbox contains a small git repository. Try running:\n\n```bash\ngit log --oneline\ngit status\ngit diff HEAD~1 HEAD\n```\n\nThen use `gh copilot explain` on any git command output you don't understand!\n\n---\n\n### 🎯 Goal\n\nExplain at least **3 git error messages** using Copilot, and suggest a fix for at least **2 of them**.",
+  "hints": [
+    "gh copilot explain \"CONFLICT (content): Merge conflict in app.py\"",
+    "gh copilot suggest \"show what changed in the last git commit\"",
+    "gh copilot explain \"detached HEAD state\""
+  ]
+}
